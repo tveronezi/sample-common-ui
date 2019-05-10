@@ -1,2 +1,17 @@
 = sample-common-ui
 
+== Build
+
+```
+yarn install
+yarn build
+```
+
+== Publish
+
+* Make sure you have the right version for your library on `package.json`.
+* After building the library, you run...
+
+```
+npm publish build --tag next
+```
