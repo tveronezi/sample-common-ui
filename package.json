@@ -1,39 +1,62 @@
 {
   "name": "sample-common-ui",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@material-ui/core": "^3.9.3",
-    "@material-ui/icons": "^3.0.2",
-    "axios": "^0.18.0",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-jss": "^8.6.1",
-    "react-redux": "^7.0.3",
-    "react-router": "^5.0.0",
-    "react-router-dom": "^5.0.0",
-    "react-scripts": "3.0.0",
-    "redux": "^4.0.1"
-  },
+  "version": "0.0.1",
+  "private": false,
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "build": "yarn build:cjs && yarn build:copy-files",
+    "build:cjs": "cross-env NODE_ENV=production BABEL_ENV=cjs babel --config-file ./babel.config.js ./src --out-dir ./build --ignore \"**/*.test.js\"",
+    "build:copy-files": "node scripts/copy-files.js"
   },
-  "eslintConfig": {
-    "extends": "react-app"
+  "peerDependencies": {
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "dependencies": {
+    "@babel/cli": "^7.2.0",
+    "@babel/core": "^7.2.2",
+    "@babel/node": "^7.2.2",
+    "@babel/plugin-proposal-class-properties": "^7.2.1",
+    "@babel/plugin-proposal-object-rest-spread": "^7.2.0",
+    "@babel/plugin-transform-object-assign": "^7.2.0",
+    "@babel/plugin-transform-runtime": "^7.2.0",
+    "@babel/preset-env": "^7.2.0",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/preset-typescript": "^7.1.0",
+    "@babel/register": "^7.0.0",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-eslint": "^10.0.0",
+    "babel-loader": "^8.0.0",
+    "babel-plugin-istanbul": "^5.0.0",
+    "babel-plugin-module-resolver": "^3.0.0",
+    "babel-plugin-optimize-clsx": "^1.1.2",
+    "babel-plugin-preval": "^2.0.0",
+    "babel-plugin-react-remove-properties": "^0.3.0",
+    "babel-plugin-tester": "^5.5.1",
+    "babel-plugin-transform-dev-warning": "^0.1.0",
+    "babel-plugin-transform-react-constant-elements": "^6.23.0",
+    "babel-plugin-transform-react-remove-prop-types": "^0.4.21",
+    "cross-env": "^5.2.0",
+    "rimraf": "^2.6.3",
+    "clsx": "^1.0.2",
+    "convert-css-length": "^1.0.2",
+    "csstype": "^2.5.2",
+    "debounce": "^1.1.0",
+    "deepmerge": "^3.0.0",
+    "fs-extra": "^7.0.1",
+    "hoist-non-react-statics": "^3.2.1",
+    "is-plain-object": "^2.0.4",
+    "normalize-scroll-left": "^0.1.2",
+    "popper.js": "^1.14.1",
+    "prop-types": "^15.7.2",
+    "react-event-listener": "^0.6.6",
+    "react-transition-group": "^4.0.0",
+    "warning": "^4.0.1"
+  },
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=8.0.0"
   }
 }
