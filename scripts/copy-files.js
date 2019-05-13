@@ -1,5 +1,6 @@
 /* eslint-disable no-console */
 const path = require('path');
+const rmdir = require('rimraf');
 const fse = require('fs-extra');
 const fs = require('fs');
 
@@ -32,6 +33,20 @@ async function run() {
             }
             return `${src}`.endsWith(".svg");
         });
+        fse.copySync(path.join(packagePath, 'index.js'), path.resolve(buildPath, 'index.js'));
+        const move = (target) => {
+            const targetDir = path.join(buildPath, target);
+            const src = path.join(buildPath, "src");
+            try {
+                fs.mkdirSync(src);
+            } catch (e) {
+                // existing
+            }
+            const resultingDir = path.join(src, target);
+            fs.renameSync(targetDir, resultingDir);
+        };
+        move("layout");
+        move("services");
     } catch (err) {
         console.error(err);
         process.exit(1);

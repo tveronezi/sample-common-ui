@@ -8,13 +8,30 @@
     "url" : "git@github.com:veronezi/sample-common-ui.git"
   },
   "scripts": {
-    "build": "yarn build:js && yarn build:copy-files",
+    "build": "yarn clean && yarn build:js && yarn build:copy-files",
+    "clean": "rimraf ./build/*",
     "build:js": "cross-env NODE_ENV=production BABEL_ENV=es babel --config-file ./babel.config.js ./src --out-dir ./build --ignore \"**/*.test.js\"",
     "build:copy-files": "node scripts/copy-files.js"
   },
   "peerDependencies": {
-    "react": "^16.8.0",
-    "react-dom": "^16.8.0"
+    "@material-ui/core": "^3.9.3",
+    "@material-ui/icons": "^3.0.2",
+    "axios": "^0.18.0",
+    "classnames": "^2.2.6",
+    "hex-rgb": "^4.1.0",
+    "merge": "^1.2.1",
+    "moment": "^2.24.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-hotkeys": "^1.1.4",
+    "react-jss": "^8.6.1",
+    "react-redux": "^7.0.2",
+    "react-router": "^5.0.0",
+    "react-router-dom": "^5.0.0",
+    "react-scripts": "^2.1.5",
+    "react-transition-group": "^4.0.0",
+    "redux": "^4.0.1",
+    "typeface-roboto": "^0.0.54"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.0",
@@ -54,8 +71,25 @@
     "popper.js": "^1.14.1",
     "prop-types": "^15.7.2",
     "react-event-listener": "^0.6.6",
+    "warning": "^4.0.1",
+    "@material-ui/core": "^3.9.3",
+    "@material-ui/icons": "^3.0.2",
+    "axios": "^0.18.0",
+    "classnames": "^2.2.6",
+    "hex-rgb": "^4.1.0",
+    "merge": "^1.2.1",
+    "moment": "^2.24.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-hotkeys": "^1.1.4",
+    "react-jss": "^8.6.1",
+    "react-redux": "^7.0.2",
+    "react-router": "^5.0.0",
+    "react-router-dom": "^5.0.0",
+    "react-scripts": "^2.1.5",
     "react-transition-group": "^4.0.0",
-    "warning": "^4.0.1"
+    "redux": "^4.0.1",
+    "typeface-roboto": "^0.0.54"
   },
   "sideEffects": false,
   "publishConfig": {
