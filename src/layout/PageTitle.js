@@ -20,9 +20,7 @@ const createRoute = (page, index, collapsed, hidden, classes) => {
     return icon;
   };
   const render = () => (
-    <div className={classNames("content", {
-      [classes.panelCollapsed]: collapsed || hidden
-    })}>
+    <div className={"content"}>
       <div className={classes.icon} data-icon={page.target.parentIcon ? "parent" : "target"}>{getIcon(page)}</div>
       <div className={classNames({[classes.detailsCollapsed]: collapsed || hidden})}>
         <PageMenuHeaderTitle text={getTitle(page)}/>

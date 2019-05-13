@@ -1,7 +1,5 @@
 import injectSheet from "react-jss";
 import {
-  collapsedLeftSize,
-  expandedLeftSize,
   grey,
   noAnimationStyles,
   slideBackwardStyles,
@@ -18,7 +16,6 @@ const styles = (theme) => ({
       bottom: 0,
       left: 0,
       right: 0,
-      width: expandedLeftSize,
       transition: `width ${theme.transitions.easing.easeInOut} ${theme.transitions.duration.standard}ms`,
       backgroundColor: grey,
       display: "flex",
@@ -51,10 +48,7 @@ const styles = (theme) => ({
   },
   detailsCollapsed: {
     display: "none"
-  },
-  panelCollapsed: {
-    width: collapsedLeftSize
-  },
+  }
 });
 
 export default ((cls) => injectSheet(styles)(cls));
